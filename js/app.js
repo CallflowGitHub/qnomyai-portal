@@ -1,6 +1,38 @@
 // ── APP LOGIC ──
 
 (function () {
+  // ── THEME TOGGLE ──
+  const themeSwitch = document.getElementById('theme-switch');
+  const html = document.documentElement;
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
+      themeSwitch.setAttribute('aria-checked', 'true');
+    } else {
+      html.removeAttribute('data-theme');
+      themeSwitch.setAttribute('aria-checked', 'false');
+    }
+  }
+
+  // Restore saved preference
+  applyTheme(localStorage.getItem('theme') || 'dark');
+
+  themeSwitch.addEventListener('click', function () {
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', next);
+    applyTheme(next);
+  });
+
+  themeSwitch.addEventListener('keydown', function (e) {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', next);
+      applyTheme(next);
+    }
+  });
+
   // ── TAB SWITCHING ──
   const tabs = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');

@@ -20,6 +20,66 @@
   --transition:    0.22s ease;
 }
 
+/* ── LIGHT THEME ── */
+html[data-theme="light"] {
+  --bg-base:       #f2f2f2;
+  --bg-card:       #ffffff;
+  --bg-card-hover: #e8e8e8;
+  --bg-header:     #ffffff;
+  --orange-glow:   rgba(255, 106, 0, 0.10);
+  --gray-100:      #1a1a1a;
+  --gray-300:      #333333;
+  --gray-500:      #777777;
+  --gray-700:      #e0e0e0;
+  --border:        #d8d8d8;
+}
+
+/* ── THEME SWITCH ── */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+.theme-switch:focus-visible .theme-switch-track {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+.theme-switch-track {
+  position: relative;
+  width: 28px;
+  height: 16px;
+  background: var(--gray-700);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: background var(--transition), border-color var(--transition);
+}
+.theme-switch-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+html[data-theme="light"] .theme-switch-knob {
+  transform: translateX(12px);
+}
+.theme-switch-icon {
+  font-size: 0.72rem;
+  line-height: 1;
+  transition: opacity var(--transition);
+}
+.theme-switch-dark  { opacity: 1; }
+.theme-switch-light { opacity: 0.35; }
+html[data-theme="light"] .theme-switch-dark  { opacity: 0.35; }
+html[data-theme="light"] .theme-switch-light { opacity: 1; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -213,7 +273,7 @@ header {
 
 /* ── HERO BAND ── */
 .hero-band {
-  background: linear-gradient(135deg, #1a0d00 0%, #0d0d0d 60%, #0d0d0d 100%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--orange) 12%, var(--bg-base)) 0%, var(--bg-base) 60%, var(--bg-base) 100%);
   border-bottom: 1px solid var(--border);
   padding: 48px 28px;
 }
@@ -266,6 +326,18 @@ header {
 
 [dir="rtl"] .hero-title {
   background: linear-gradient(270deg, #ffffff 0%, var(--orange-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+html[data-theme="light"] .hero-title {
+  background: linear-gradient(90deg, var(--gray-100) 0%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+html[data-theme="light"] [dir="rtl"] .hero-title {
+  background: linear-gradient(270deg, var(--gray-100) 0%, var(--orange) 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -590,7 +662,11 @@ main.grid-collapsed {
 }
 .archive-section {
   border-top: 1px solid var(--border);
-  background: #0a0a0a;
+  background: color-mix(in srgb, var(--bg-base) 85%, #000);
+}
+html[data-theme="light"] .archive-section {
+  background: color-mix(in srgb, var(--bg-base) 60%, #fff);
+  border-top-color: var(--gray-500);
 }
 
 .archive-inner {
@@ -627,7 +703,7 @@ main.grid-collapsed {
   align-items: center;
   justify-content: space-between;
   padding: 14px 20px;
-  background: #131313;
+  background: var(--bg-card);
   border-bottom: 1px solid var(--border);
   cursor: pointer;
   user-select: none;
@@ -635,7 +711,7 @@ main.grid-collapsed {
 }
 
 .archive-week-header:hover {
-  background: #1a1a1a;
+  background: var(--bg-card-hover);
 }
 
 .archive-week-label {
@@ -703,7 +779,7 @@ main.grid-collapsed {
 
 /* Archive cards are slightly more compact */
 .archive-week-cards .card {
-  background: #111111;
+  background: var(--bg-card);
 }
 
 /* ── CATEGORY FILTER BAR ── */
@@ -782,7 +858,7 @@ footer {
 
 /* ── LEADERBOARD (MODEL COMPARISON) ── */
 .lb-hero {
-  background: linear-gradient(135deg, #1a0d00 0%, #0d0d0d 60%, #0d0d0d 100%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--orange) 12%, var(--bg-base)) 0%, var(--bg-base) 60%, var(--bg-base) 100%);
   border-bottom: 1px solid var(--border);
   padding: 48px 28px;
 }
@@ -836,7 +912,7 @@ footer {
 }
 
 .lb-sub-hero {
-  background: linear-gradient(135deg, #1a0d00 0%, #0d0d0d 60%, #0d0d0d 100%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--orange) 12%, var(--bg-base)) 0%, var(--bg-base) 60%, var(--bg-base) 100%);
   border-top: 2px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 40px 28px;
