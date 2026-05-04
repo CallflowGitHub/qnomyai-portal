@@ -155,63 +155,63 @@ const ARCHIVE_WEEKS = [
 
 const NEWS_ITEMS = [
   {
-    title: { en: "Dual-Use AI", he: "AI דו-שימושי" },
+    title: { en: "Model Comparison", he: "השוואת מודלים" },
     description: {
-      en: "One of the most debated topics in AI today: the same models that help developers write secure code can also be used to discover vulnerabilities. The same reasoning capabilities that assist researchers can accelerate adversarial automation. \"Dual-use\" is no longer a niche concern — it is now central to how labs like Anthropic and OpenAI design safety measures, access tiers, and deployment policies. Understanding this tension is increasingly important for every practitioner.",
-      he: "אחד הנושאים השנויים ביותר במחלוקת ב-AI כיום: אותם מודלים שעוזרים למפתחים לכתוב קוד מאובטח יכולים גם לשמש לגילוי פרצות. אותן יכולות Reasoning שמסייעות לחוקרים יכולות להאיץ אוטומציה עוינת. \"שימוש כפול\" אינו עוד דאגה שולית — הוא כעת מרכזי בכך שמעבדות כמו Anthropic ו-OpenAI מעצבות אמצעי בטיחות, רמות גישה ומדיניות פריסה. הבנת מתח זה הופכת חשובה יותר ויותר לכל מי שעובד עם AI."
+      en: "Ever wondered which model is \"best\"? The answer depends on your specific needs. Industry benchmarks are commonly used to assess performance, but Hugging Face takes a different approach: it shows you two outputs for the same prompt without revealing which model generated each one. You choose the better result, and over time this feedback is aggregated to rank models. Check the new Model Comparison page to see the current standings.",
+      he: "תמיד תהיתם איזה מודל הוא \"הטוב ביותר\"? התשובה תלויה בצרכים הספציפיים שלכם. מדדי תעשייה נפוצים לבדיקת ביצועים, אך Hugging Face נוקטת גישה שונה: היא מציגה שתי תוצאות לאותו פרומפט מבלי לחשוף איזה מודל הפיק כל אחת. אתם בוחרים את התוצאה הטובה יותר, ועם הזמן המשוב הזה מצטבר לדירוג מודלים. בדקו את עמוד השוואת המודלים החדש לדירוגים הנוכחיים."
     },
-    category: { en: "AI Concepts", he: "מושגי AI" },
-    date: "May 11, 2026",
+    category: { en: "Pro Tips", he: "טיפים" },
+    date: "May 3, 2026",
     source: "Q-nomy AI"
   },
   {
-    title: { en: "Prompt Injection", he: "Prompt Injection" },
+    title: { en: "Reasoning", he: "Reasoning" },
     description: {
-      en: "A security vulnerability where malicious instructions embedded in external content — a webpage, a document, a database record — hijack an agent's behavior. Because agents read and act on text from the environment, an attacker can craft inputs that override the original instructions. This is dual-use by nature: understanding how injections work is essential both for defenders building safe systems and for red-teamers stress-testing them. Always validate and sanitize any text an agent ingests from untrusted sources.",
-      he: "פרצת אבטחה שבה הוראות זדוניות הטמונות בתוכן חיצוני — דף אינטרנט, מסמך, רשומת מסד נתונים — חוטפות את התנהגות הסוכן. מכיוון שסוכנים קוראים ופועלים על טקסט מהסביבה, תוקף יכול לייצר קלטים שעוקפים את ההוראות המקוריות. זה טבעו הכפול: הבנת אופן הפעולה של Injections חיונית הן עבור מגינים הבונים מערכות בטוחות והן עבור Red-Teamers הבוחנים אותן. תמיד אמתו ונקו כל טקסט שסוכן בולע ממקורות לא מהימנים."
+      en: "The ability to process information step-by-step, connecting facts and logic to reach a conclusion rather than simply retrieving patterns. In practice, the model plans how to answer by breaking problems into multi-step tasks, processing them, and validating the result before responding. The level of reasoning can often be controlled to avoid unnecessary token usage.",
+      he: "היכולת לעבד מידע צעד אחר צעד, לחבר עובדות והיגיון כדי להגיע למסקנה במקום לאחזר דפוסים בלבד. בפועל, המודל מתכנן כיצד לענות על ידי פירוק בעיות למשימות מרובות שלבים, עיבודן ואימות התוצאה לפני המענה. ניתן לעיתים קרובות לשלוט ברמת ה-Reasoning כדי למנוע שימוש מיותר בטוקנים."
     },
     category: { en: "AI Concepts", he: "מושגי AI" },
-    date: "May 11, 2026",
+    date: "May 3, 2026",
     source: "Q-nomy AI"
   },
   {
-    title: { en: "Fine-Tuning", he: "Fine-Tuning" },
+    title: { en: "Agent Harness", he: "Agent Harness" },
     description: {
-      en: "The process of further training a pre-trained model on a smaller, domain-specific dataset to adapt its behavior. Fine-tuning is dual-use in a subtle way: it can specialize a model for valuable enterprise tasks — such as customer support, legal review, or medical triage — but the same technique can also be used to strip out safety guardrails from open-weight models. Many open-source models are now distributed with published fine-tuning recipes, making this a critical concept to understand when evaluating model provenance and trust.",
-      he: "תהליך אימון נוסף של מודל מאומן מראש על מערך נתונים קטן יותר וספציפי לתחום כדי להתאים את התנהגותו. Fine-Tuning הוא דו-שימושי בדרך עדינה: הוא יכול להתמחות מודל למשימות ארגוניות בעלות ערך — כגון תמיכת לקוחות, בדיקת חוזים, או חקירה רפואית — אך אותה טכניקה יכולה גם לשמש להסרת מגדרי הבטיחות ממודלים בעלי משקולות פתוחות. מודלי קוד פתוח רבים מופצים כיום עם מתכוני Fine-Tuning מפורסמים, מה שהופך מושג זה לקריטי להבנה בעת הערכת מוצא מודלים ואמינותם."
+      en: "The runtime framework that manages how an AI agent operates — handling inputs, invoking tools, managing context, and orchestrating workflows. It acts as the \"execution layer\" around the model, ensuring the agent behaves reliably, follows rules, and integrates with external systems, as per what you define. In other words: this is essentially everything you supply the model with outside of your User Prompt.",
+      he: "מסגרת זמן הריצה שמנהלת כיצד סוכן AI פועל — טיפול בקלטים, הפעלת כלים, ניהול הקשר ותזמור תהליכי עבודה. הוא פועל כ\"שכבת הביצוע\" סביב המודל, ומבטיח שהסוכן מתנהג באופן אמין, עוקב אחר הכללים ומשתלב עם מערכות חיצוניות, בהתאם להגדרות שלכם. במילים אחרות: זה בעצם כל מה שאתם מספקים למודל מחוץ לפרומפט המשתמש שלכם."
     },
     category: { en: "AI Concepts", he: "מושגי AI" },
-    date: "May 11, 2026",
+    date: "May 3, 2026",
     source: "Q-nomy AI"
   },
   {
-    title: { en: "Claude Sonnet 4.5", he: "Claude Sonnet 4.5" },
+    title: { en: "Muse Spark", he: "Muse Spark" },
     description: {
-      en: "Anthropic's latest mid-tier release brings notable improvements to agentic task execution and long-context reasoning while keeping costs significantly lower than the Opus tier. In internal benchmarks it outperforms its predecessor on multi-step coding tasks and document analysis. Its dual-use profile is notable: the same long-context window that makes it excellent for contract review also makes it highly capable at analyzing large codebases for exploitable patterns.",
-      he: "הגרסה האחרונה של Anthropic בדרג הביניים מביאה שיפורים ניכרים בביצוע משימות אגנטיות ו-Reasoning על הקשרים ארוכים תוך שמירה על עלויות נמוכות משמעותית בהשוואה לדרג Opus. במדדים פנימיים הוא עולה על קודמו במשימות קוידינג מרובות שלבים ובניתוח מסמכים. הפרופיל הדו-שימושי שלו בולט: אותה חלון הקשר ארוך שהופך אותו למצוין לסקירת חוזים גם הופך אותו ליכולת גבוהה לניתוח בסיסי קוד גדולים לאיתור דפוסים ניתנים לניצול."
+      en: "A new model from Meta, positioned as a more capable, multimodal AI system with improved performance compared to earlier releases.",
+      he: "מודל חדש מ-Meta, הממוצב כמערכת AI רב-מודלית מתקדמת יותר עם ביצועים משופרים בהשוואה לגרסאות קודמות."
     },
     category: { en: "AI Models", he: "מודלי AI" },
-    date: "May 11, 2026",
-    source: "Anthropic"
+    date: "May 3, 2026",
+    source: "Meta"
   },
   {
-    title: { en: "Codex CLI", he: "Codex CLI" },
+    title: { en: "NotebookLM in Gemini", he: "NotebookLM ב-Gemini" },
     description: {
-      en: "OpenAI's open-source command-line coding agent. It runs locally, reads your repo, and can write, edit, and execute code autonomously inside a sandboxed environment. Its dual-use nature is front and center: the same agent that automates boilerplate generation can be pointed at security scanners, penetration testing scripts, or infrastructure automation with minimal modification. OpenAI ships it with configurable approval modes — from fully supervised to fully autonomous — precisely because the power cuts both ways.",
-      he: "סוכן הקוידינג בשורת הפקודה של OpenAI בקוד פתוח. הוא פועל מקומית, קורא את ה-Repo שלכם, ויכול לכתוב, לערוך ולהפעיל קוד באופן עצמאי בסביבה בארגז חול. טבעו הדו-שימושי בולט: אותו סוכן שמאפשר אוטומציה של יצירת קוד בסיסי ניתן לכוון לסורקי אבטחה, סקריפטים לבדיקות חדירה, או אוטומציה של תשתיות עם שינויים מינימליים. OpenAI מספקת אותו עם מצבי אישור הניתנים להגדרה — ממפוקח לחלוטין ועד עצמאי לחלוטין — בדיוק משום שהעוצמה פועלת לשני הכיוונים."
+      en: "Google has integrated NotebookLM directly into Gemini, effectively connecting both platforms.",
+      he: "Google שילבה את NotebookLM ישירות ב-Gemini, ומחברת למעשה את שתי הפלטפורמות."
     },
     category: { en: "Pro Tips", he: "טיפים" },
-    date: "May 11, 2026",
-    source: "OpenAI"
+    date: "May 3, 2026",
+    source: "Google"
   },
   {
-    title: { en: "AI in Code Reviews", he: "AI בסקירות קוד" },
+    title: { en: "File Generation in Gemini", he: "יצירת קבצים ב-Gemini" },
     description: {
-      en: "Using AI agents as an automated first reviewer is rapidly becoming standard practice. The agent reads a pull request, checks for bugs, style violations, and security issues, and posts comments — all before a human reviewer ever looks. The dual-use angle here is practical: the same patterns an agent flags as vulnerabilities in your code are the patterns it can be asked to introduce. Teams adopting AI reviewers should also adopt AI red-teaming to stay ahead.",
-      he: "שימוש בסוכני AI כמבקרים ראשונים אוטומטיים הופך במהרה לנוהג סטנדרטי. הסוכן קורא בקשת Pull Request, בודק באגים, הפרות סגנון ובעיות אבטחה, ומפרסם הערות — הכל לפני שמבקר אנושי בכלל מסתכל. הזווית הדו-שימושית כאן פרקטית: אותם דפוסים שסוכן מסמן כפרצות בקוד שלכם הם הדפוסים שאפשר לבקש ממנו להכניס. צוותים שמאמצים מבקרים בינה מלאכותית צריכים גם לאמץ Red-Teaming מבוסס AI כדי להישאר צעד אחד קדימה."
+      en: "Gemini can now generate multiple file types as output, including PPT, DOCX, MD, PDF, and more.",
+      he: "Gemini יכולה כעת ליצור סוגי קבצים מרובים כפלט, כולל PPT, DOCX, MD, PDF ועוד."
     },
     category: { en: "Pro Tips", he: "טיפים" },
-    date: "May 11, 2026",
-    source: "Q-nomy AI"
+    date: "May 3, 2026",
+    source: "Google"
   }
 ];
