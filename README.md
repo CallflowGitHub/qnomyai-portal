@@ -18,7 +18,7 @@ Q-nomy AI Portal is a multi-section, single-page application serving as the home
 - **Weekly Brief** — collapsible news cards with category filter, bilingual (EN/HE) support, and archive of past editions
 - **AI Projects** — showcase of Q-nomy AI initiatives *(coming soon)*
 - **Skills Repo** — reusable AI skills catalog *(coming soon)*
-- **Model Comparison** — side-by-side LLM comparison tool *(coming soon)*
+- **Model Comparison** — rendered leaderboard view for coding/text models
 - Dark theme with CSS variable-based theming
 - Fully accessible (ARIA roles, keyboard navigation, tab panel pattern)
 - Bilingual display: English and Hebrew via `data-en` / `data-he` attributes
@@ -31,9 +31,14 @@ Q-nomy AI Portal is a multi-section, single-page application serving as the home
 ├── index.html          # Page structure, tab panels, and script loading
 ├── js/
 │   ├── news.js         # ← Edit this to add/update articles and archive weeks
+│   ├── model-data.js   # Model leaderboard data for the comparison tab
 │   └── app.js          # DOM rendering, tab switching, language toggle, interaction logic
 ├── css/
-│   └── styles.css      # All theming (CSS variables, grid, animations)
+│   ├── styles.css      # CSS import hub
+│   ├── base.css        # Tokens, reset, layout, shared components
+│   ├── brief.css       # Weekly Brief styles
+│   ├── comparison.css  # Model Comparison styles
+│   └── responsive.css  # Media queries
 └── assets/
     ├── qnomyailogo_transparent.png
     └── qnomyai_comingsoon.png

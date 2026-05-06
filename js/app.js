@@ -1,9 +1,18 @@
 // ── APP LOGIC ──
 
 (function () {
+  const html = document.documentElement;
+
+  const headerEl = document.querySelector('header');
+  function syncStickyOffsets() {
+    if (!headerEl) return;
+    html.style.setProperty('--header-height', headerEl.offsetHeight + 'px');
+  }
+  syncStickyOffsets();
+  window.addEventListener('resize', syncStickyOffsets);
+
   // ── THEME TOGGLE ──
   const themeSwitch = document.getElementById('theme-switch');
-  const html = document.documentElement;
 
   function applyTheme(theme) {
     if (theme === 'light') {
@@ -116,6 +125,7 @@
     const heDesc  = typeof item.description === 'object' ? item.description.he : item.description;
     const enCat   = typeof item.category === 'object' ? item.category.en : item.category;
     const heCat   = typeof item.category === 'object' ? item.category.he : item.category;
+    const dDate   = item.date || '';
 
     const card = document.createElement('article');
     card.className = 'card';
@@ -133,6 +143,7 @@
     card.innerHTML = `
       <div class="card-top">
         <span class="card-category">${escHtml(dCat)}</span>
+        <span class="card-date">${escHtml(dDate)}</span>
       </div>
       <h3 class="card-title">${escHtml(dTitle)}</h3>
       <div class="card-desc-wrap">
@@ -303,13 +314,77 @@
     archiveList.appendChild(weekEl);
   });
 
+  // ── MODEL COMPARISON TABLES ──
+  function safeMakerClass(raw) {
+    return /^[a-z0-9-]+$/i.test(raw || '') ? raw : 'anthropic';
+  }
+
+  function renderComparisonTable(containerId, section) {
+    const mount = document.getElementById(containerId);
+    if (!mount || !section || !section.rows) return;
+
+    const table = document.createElement('div');
+    table.className = 'lb-table';
+    table.setAttribute('role', 'table');
+    table.setAttribute('data-aria-en', section.tableAriaLabel.en);
+    table.setAttribute('data-aria-he', section.tableAriaLabel.he);
+    table.setAttribute('aria-label', section.tableAriaLabel.en);
+
+    table.innerHTML = `
+      <div class="lb-row lb-row--head" role="row">
+        <span class="lb-cell lb-cell--rank" role="columnheader">#</span>
+        <span class="lb-cell lb-cell--model" role="columnheader" data-en="Model" data-he="מודל">Model</span>
+        <span class="lb-cell lb-cell--elo" role="columnheader" data-en="Elo Score" data-he="ניקוד Elo">Elo Score</span>
+        <span class="lb-cell lb-cell--price" role="columnheader" data-en="Price (in / out per 1M tokens)" data-he="מחיר (כניסה / יציאה ל-1M אסימונים)">Price (in / out per 1M tokens)</span>
+        <span class="lb-cell lb-cell--ctx" role="columnheader" data-en="Context" data-he="חלון הקשר">Context</span>
+      </div>
+    `;
+
+    section.rows.forEach(function (row) {
+      const rowEl = document.createElement('div');
+      rowEl.className = 'lb-row' + (row.rank <= 3 ? ' lb-row--top3' : '');
+      rowEl.setAttribute('role', 'row');
+      rowEl.innerHTML = `
+        <span class="lb-cell lb-cell--rank">${escHtml(row.medal || String(row.rank))}</span>
+        <span class="lb-cell lb-cell--model">
+          <span class="lb-model-name">${escHtml(row.name)}</span>
+          <span class="lb-maker lb-maker--${safeMakerClass(row.makerClass)}">${escHtml(row.maker)}</span>
+        </span>
+        <span class="lb-cell lb-cell--elo">
+          <span class="lb-elo-score">${escHtml(String(row.elo))}</span>
+          <div class="lb-elo-bar-wrap"><div class="lb-elo-bar" style="--bar-w: ${escHtml(String(row.bar))}%"></div></div>
+        </span>
+        <span class="lb-cell lb-cell--price">${escHtml(row.price)}</span>
+        <span class="lb-cell lb-cell--ctx">${escHtml(row.context)}</span>
+      `;
+      table.appendChild(rowEl);
+    });
+
+    mount.innerHTML = '';
+    mount.appendChild(table);
+  }
+
+  if (typeof MODEL_COMPARISON !== 'undefined') {
+    renderComparisonTable('coding-leaderboard', MODEL_COMPARISON.coding);
+    renderComparisonTable('text-leaderboard', MODEL_COMPARISON.text);
+  }
+
   // ── LANGUAGE SWITCHING ──
   function setLanguage(lang) {
     currentLang = lang;
-    // Update all translatable text nodes (titles, descriptions, category badges, filter pills)
-    document.querySelectorAll('#panel-brief [data-en]').forEach(function (el) {
+    document.documentElement.lang = lang === 'he' ? 'he' : 'en';
+
+    // Update all translatable text nodes across panels.
+    document.querySelectorAll('[data-en]').forEach(function (el) {
       el.textContent = (el.dataset[lang] !== undefined ? el.dataset[lang] : el.dataset.en);
     });
+
+    // Keep ARIA labels translated for generated comparison tables.
+    document.querySelectorAll('[data-aria-en]').forEach(function (el) {
+      const aria = (lang === 'he' && el.dataset.ariaHe) ? el.dataset.ariaHe : el.dataset.ariaEn;
+      if (aria) el.setAttribute('aria-label', aria);
+    });
+
     // Update expand button labels, respecting each card's expanded state
     document.querySelectorAll('#panel-brief .card-expand-btn').forEach(function (btn) {
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
@@ -317,8 +392,12 @@
         ? (lang === 'he' ? '\u05D4\u05E6\u05D2 \u05E4\u05D7\u05D5\u05EA' : 'Show less')
         : (lang === 'he' ? '\u05E7\u05E8\u05D0 \u05E2\u05D5\u05D3' : 'Read more');
     });
-    // RTL direction
+
+    // RTL direction per panel
     document.getElementById('panel-brief').setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+    const comparePanel = document.getElementById('panel-compare');
+    if (comparePanel) comparePanel.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+
     // Active button highlight
     document.querySelectorAll('.lang-btn').forEach(function (b) {
       b.classList.toggle('lang-btn--active', b.dataset.lang === lang);
