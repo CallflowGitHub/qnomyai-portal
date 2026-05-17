@@ -7,6 +7,91 @@
 // Each entry represents a previous week. Add new objects to prepend older editions.
 const ARCHIVE_WEEKS = [
   {
+    week: { en: "Week of May 10, 2026", he: "שבוע 10 במאי 2026" },
+    items: [
+      {
+        title: { en: "PDC Skills Competition", he: "תחרות Skills של PDC" },
+        description: {
+          en: "We recently launched our first Skills Competition within the PDC. Skills are pre-written instructions that guide AI agents on how to perform specific tasks - similar to a cheat sheet the agent reads before taking action.\n\nThe competition focuses on skills that demonstrate business value, productivity impact, practical usability, and creativity. Stay tuned over the next two weeks to discover which employees and skills will win.",
+          he: "לאחרונה השקנו את תחרות ה-Skills הראשונה שלנו ב-PDC. מיומנויות הן הוראות כתובות מראש המנחות סוכני AI כיצד לבצע משימות ספציפיות - דומה לדף צ'יטים שהסוכן קורא לפני שפועל.\n\nהתחרות מתמקדת ב-Skills המדגימות ערך עסקי, השפעה על פרודוקטיביות, שימושיות מעשית ויצירתיות. הישארו מעודכנים במהלך שבועיים הקרובים כדי לגלות אילו עובדים ואילו Skills ינצחו."
+        },
+        category: { en: "AI Tools", he: "כלי AI" },
+        date: "May 11, 2026",
+        source: "Q-nomy AI"
+      },
+      {
+        title: { en: "Claude Code Can Dream!", he: "Claude Code יכול לחלום!" },
+        description: {
+          en: "Memory is becoming a major focus for the latest foundation models and AI platforms, and Claude Code has now introduced \"Dreams.\"\n\nDreams is a feature where Claude asynchronously reviews its accumulated memory stores and past session transcripts, then reorganizes and cleans them into a more optimized memory structure. This enables Claude to become more helpful, perform better, and respond more efficiently over time.",
+          he: "זיכרון הופך לנושא מרכזי עבור מודלי הבסיס ופלטפורמות ה-AI האחרונות. Claude Code הציגה כעת את \"Dreams\".\n\nDreams הוא פיצ'ר שבו Claude סוקר באופן אסינכרוני את מאגרי הזיכרון שצבר ותמלולי ה-session הקודמים, ואז מארגן ומנקה אותם למבנה זיכרון אופטימלי יותר. זה מאפשר ל-Claude להפוך מועיל יותר, לבצע טוב יותר ולהגיב ביעילות רבה יותר לאורך זמן."
+        },
+        category: { en: "AI Tools", he: "כלי AI" },
+        date: "May 11, 2026",
+        source: "Anthropic"
+      },
+      {
+        title: { en: "Claude Code Routines", he: "Routines ב-Claude Code" },
+        description: {
+          en: "Routines in Claude Code are automations configured once - including prompts, repositories, and connectors - and then executed on a schedule. They can run either locally on your machine or in the cloud.\n\nIn the software development world, you can imagine a Routine triggering whenever a new requirement is added, immediately feeding it into Claude Code to begin generating the implementation automatically.",
+          he: "Routines ב-Claude Code הן אוטומציות המוגדרות פעם אחת - כולל פרומפטים, מאגרי קוד וחיבורים - ולאחר מכן מבוצעות לפי לוח זמנים. הן יכולות לפעול מקומית על המחשב שלך או בענן.\n\nבעולם פיתוח התוכנה, אפשר לדמיין Routine שמופעלת בכל פעם שדרישה חדשה מתווספת, ומייד מזינה אותה ל-Claude Code כדי להתחיל ליצור את המימוש אוטומטית."
+        },
+        category: { en: "AI Tools", he: "כלי AI" },
+        date: "May 11, 2026",
+        source: "Anthropic"
+      },
+      {
+        title: { en: "Claude Code Outcomes", he: "Outcomes ב-Claude Code" },
+        description: {
+          en: "Imagine being able to tell an AI agent: \"This is what success looks like for this task\" and having the agent continuously work until it fully achieves that outcome - regardless of how many writing and review iterations are required. (If you are not paying for it of course)\n\nSimilar to the \"/goal\" capability in Codex, Claude Code now supports this concept as well.",
+          he: "דמיינו שאתם יכולים לומר לסוכן AI: \"כך נראית הצלחה עבור משימה זו\" - והסוכן יעבוד ברציפות עד שישיג לחלוטין את התוצאה הזו, ללא קשר לכמה איטרציות כתיבה וסקירה נדרשות. (אם אתם כמובן לא משלמים עליו)\n\nדומה ליכולת \"/goal\" ב-Codex, Claude Code תומכת כעת גם היא במושג זה."
+        },
+        category: { en: "AI Tools", he: "כלי AI" },
+        date: "May 11, 2026",
+        source: "Anthropic"
+      },
+      {
+        title: { en: "Spec-Driven Development", he: "פיתוח מונחה-Spec" },
+        description: {
+          en: "Today, software development is largely based on business and design requirements, open issues, and \"human-readable\" documentation. In the near future, as AI agents increasingly write code themselves, requirements will need to be provided in a format better suited for them.\n\nEnter Spec-Driven Development - a coding approach where you first create a detailed mini-specification and then use it as the blueprint for implementation. You can already imagine a BRD being transformed into multiple specifications generated and consumed by AI agents.",
+          he: "כיום, פיתוח תוכנה מבוסס במידה רבה על דרישות עסקיות ועיצוביות, issues פתוחים ותיעוד \"קריא לאדם\". בעתיד הקרוב, כשסוכני AI יכתבו יותר ויותר קוד בעצמם, יהיה צורך לספק דרישות בפורמט המתאים יותר עבורם.\n\nכאן נכנס Spec-Driven Development - גישה שבה תחילה יוצרים מיני דרישה מפורטת, ואז משתמשים בה כתוכנית לביצוע. כבר אפשר לדמיין BRD שמתורגם למספר מפרטים שנוצרים ונצרכים על ידי סוכני AI."
+        },
+        category: { en: "AI Concepts", he: "מושגי AI" },
+        date: "May 11, 2026",
+        source: "Q-nomy AI"
+      },
+      {
+        title: { en: "Anthropic Keeping Their Models Close to the Chest", he: "Anthropic מגבילה גישה למודליה" },
+        description: {
+          en: "Due to the growing demand for Anthropic models (Opus, Sonnet, and Haiku), Anthropic has started limiting usage rates for products outside of the Anthropic ecosystem.\n\nThis is already being felt in platforms such as GitHub Copilot, where the latest Opus versions are no longer available, as well as in OpenClaw's base plans.",
+          he: "בשל הביקוש ההולך וגדל למודלי Anthropic (Opus, Sonnet ו-Haiku), Anthropic החלה להגביל את קצב השימוש עבור מוצרים מחוץ למערכת האקולוגית שלה.\n\nזה כבר מורגש בפלטפורמות כגון GitHub Copilot, שבה גרסאות ה-Opus האחרונות אינן זמינות עוד, וכן בתוכניות הבסיס של OpenClaw."
+        },
+        category: { en: "AI Models", he: "מודלי AI" },
+        date: "May 11, 2026",
+        source: "Anthropic"
+      },
+      {
+        title: { en: "GPT Images 2.0", he: "GPT Images 2.0" },
+        description: {
+          en: "OpenAI recently released GPT Images 2.0, its latest image generation and editing model focused on high-quality visuals, strong prompt understanding, realistic rendering, and accurate text generation within images.\n\nThe capability is built directly into ChatGPT and fully integrated into the platform.",
+          he: "OpenAI שחררה לאחרונה את GPT Images 2.0, מודל יצירת ועריכת התמונות האחרון שלה, המתמקד בויזואלים איכותיים, הבנת פרומפטים חזקה, רינדור ריאליסטי ויצירת טקסט מדויקת בתוך תמונות.\n\nהיכולת בנויה ישירות לתוך ChatGPT ומשולבת במלואה בפלטפורמה."
+        },
+        category: { en: "AI Models", he: "מודלי AI" },
+        date: "May 11, 2026",
+        source: "OpenAI"
+      },
+      {
+        title: { en: "Codex Is the New Claude Cowork", he: "Codex הוא Claude Cowork החדש" },
+        description: {
+          en: "Codex, OpenAI's AI software engineering platform capable of running code (similar to Claude Code, Cursor, and others), is evolving into a \"super app.\"\n\nIt can now also perform actions directly on your computer - similar to Claude Cowork and OpenClaw - while operating anonymously.",
+          he: "Codex, פלטפורמת הנדסת התוכנה של OpenAI המסוגלת להריץ קוד (דומה ל-Claude Code, Cursor ואחרים), מתפתחת ל\"סופר-אפ\".\n\nכעת הוא יכול גם לבצע פעולות ישירות על המחשב שלך - דומה ל-Claude Cowork ו-OpenClaw - תוך פעולה בעילום שם."
+        },
+        category: { en: "AI Tools", he: "כלי AI" },
+        date: "May 11, 2026",
+        source: "OpenAI"
+      }
+    ]
+  },
+  {
     week: { en: "Week of May 3, 2026", he: "שבוע 3 במאי 2026" },
     items: [
       {
@@ -220,83 +305,43 @@ const ARCHIVE_WEEKS = [
 
 const NEWS_ITEMS = [
   {
-    title: { en: "PDC Skills Competition", he: "תחרות Skills של PDC" },
+    title: { en: "Codex on Mobile", he: "Codex במובייל" },
     description: {
-      en: "We recently launched our first Skills Competition within the PDC. Skills are pre-written instructions that guide AI agents on how to perform specific tasks - similar to a cheat sheet the agent reads before taking action.\n\nThe competition focuses on skills that demonstrate business value, productivity impact, practical usability, and creativity. Stay tuned over the next two weeks to discover which employees and skills will win.",
-      he: "לאחרונה השקנו את תחרות ה-Skills הראשונה שלנו ב-PDC. מיומנויות הן הוראות כתובות מראש המנחות סוכני AI כיצד לבצע משימות ספציפיות - דומה לדף צ'יטים שהסוכן קורא לפני שפועל.\n\nהתחרות מתמקדת ב-Skills המדגימות ערך עסקי, השפעה על פרודוקטיביות, שימושיות מעשית ויצירתיות. הישארו מעודכנים במהלך שבועיים הקרובים כדי לגלות אילו עובדים ואילו Skills ינצחו."
+      en: "OpenAI is closing the gap with tools like Claude Code and Claude Cowork faster than expected. Codex is now coming to mobile as part of the ChatGPT app on both iOS and Android, allowing users to perform coding and broader computer-related tasks directly from their phones.",
+      he: "OpenAI סוגרת את הפער מול כלים כמו Claude Code ו-Claude Cowork מהר יותר מהצפוי. Codex מגיע כעת למובייל כחלק מאפליקציית ChatGPT ב-iOS וב-Android, ומאפשר למשתמשים לבצע משימות קודינג ומשימות מחשב רחבות יותר ישירות מהטלפון."
     },
     category: { en: "AI Tools", he: "כלי AI" },
-    date: "May 11, 2026",
-    source: "Q-nomy AI"
-  },
-  {
-    title: { en: "Claude Code Can Dream!", he: "Claude Code יכול לחלום!" },
-    description: {
-      en: "Memory is becoming a major focus for the latest foundation models and AI platforms, and Claude Code has now introduced \"Dreams.\"\n\nDreams is a feature where Claude asynchronously reviews its accumulated memory stores and past session transcripts, then reorganizes and cleans them into a more optimized memory structure. This enables Claude to become more helpful, perform better, and respond more efficiently over time.",
-      he: "זיכרון הופך לנושא מרכזי עבור מודלי הבסיס ופלטפורמות ה-AI האחרונות. Claude Code הציגה כעת את \Dreams\.\n\nDreams הוא פיצ'ר שבו Claude סוקר באופן אסינכרוני את מאגרי הזיכרון שצבר ותמלולי ה-session הקודמים, ואז מארגן ומנקה אותם למבנה זיכרון אופטימלי יותר. זה מאפשר ל-Claude להפוך מועיל יותר, לבצע טוב יותר ולהגיב ביעילות רבה יותר לאורך זמן."
-    },
-    category: { en: "AI Tools", he: "כלי AI" },
-    date: "May 11, 2026",
-    source: "Anthropic"
-  },
-  {
-    title: { en: "Claude Code Routines", he: "Routines ב-Claude Code" },
-    description: {
-      en: "Routines in Claude Code are automations configured once - including prompts, repositories, and connectors - and then executed on a schedule. They can run either locally on your machine or in the cloud.\n\nIn the software development world, you can imagine a Routine triggering whenever a new requirement is added, immediately feeding it into Claude Code to begin generating the implementation automatically.",
-      he: "Routines ב-Claude Code הן אוטומציות המוגדרות פעם אחת - כולל פרומפטים, מאגרי קוד וחיבורים - ולאחר מכן מבוצעות לפי לוח זמנים. הן יכולות לפעול מקומית על המחשב שלך או בענן.\n\nבעולם פיתוח התוכנה, אפשר לדמיין Routine שמופעלת בכל פעם שדרישה חדשה מתווספת, ומייד מזינה אותה ל-Claude Code כדי להתחיל ליצור את המימוש אוטומטית."
-    },
-    category: { en: "AI Tools", he: "כלי AI" },
-    date: "May 11, 2026",
-    source: "Anthropic"
-  },
-  {
-    title: { en: "Claude Code Outcomes", he: "Outcomes ב-Claude Code" },
-    description: {
-      en: "Imagine being able to tell an AI agent: \"This is what success looks like for this task\" and having the agent continuously work until it fully achieves that outcome - regardless of how many writing and review iterations are required. (If you are not paying for it of course)\n\nSimilar to the \"/goal\" capability in Codex, Claude Code now supports this concept as well.",
-      he: "דמיינו שאתם יכולים לומר לסוכן AI: \"כך נראית הצלחה עבור משימה זו\" - והסוכן יעבוד ברציפות עד שישיג לחלוטין את התוצאה הזו, ללא קשר לכמה איטרציות כתיבה וסקירה נדרשות. (אם אתם כמובן לא משלמים עליו)\n\nדומה ליכולת \"/goal\" ב-Codex, Claude Code תומכת כעת גם היא במושג זה."
-    },
-    category: { en: "AI Tools", he: "כלי AI" },
-    date: "May 11, 2026",
-    source: "Anthropic"
-  },
-  {
-    title: { en: "Spec-Driven Development", he: "פיתוח מונחה-Spec" },
-    description: {
-      en: "Today, software development is largely based on business and design requirements, open issues, and \"human-readable\" documentation. In the near future, as AI agents increasingly write code themselves, requirements will need to be provided in a format better suited for them.\n\nEnter Spec-Driven Development - a coding approach where you first create a detailed mini-specification and then use it as the blueprint for implementation. You can already imagine a BRD being transformed into multiple specifications generated and consumed by AI agents.",
-      he: "כיום, פיתוח תוכנה מבוסס במידה רבה על דרישות עסקיות ועיצוביות, issues פתוחים ותיעוד \"קריא לאדם\". בעתיד הקרוב, כשסוכני AI יכתבו יותר ויותר קוד בעצמם, יהיה צורך לספק דרישות בפורמט המתאים יותר עבורם.\n\nכאן נכנס Spec-Driven Development - גישה שבה תחילה יוצרים מיני דרישה מפורטת, ואז משתמשים בה כתוכנית לביצוע. כבר אפשר לדמיין BRD שמתורגם למספר מפרטים שנוצרים ונצרכים על ידי סוכני AI."
-    },
-    category: { en: "AI Concepts", he: "מושגי AI" },
-    date: "May 11, 2026",
-    source: "Q-nomy AI"
-  },
-  {
-    title: { en: "Anthropic Keeping Their Models Close to the Chest", he: "Anthropic מגבילה גישה למודליה" },
-    description: {
-      en: "Due to the growing demand for Anthropic models (Opus, Sonnet, and Haiku), Anthropic has started limiting usage rates for products outside of the Anthropic ecosystem.\n\nThis is already being felt in platforms such as GitHub Copilot, where the latest Opus versions are no longer available, as well as in OpenClaw's base plans.",
-      he: "בשל הביקוש ההולך וגדל למודלי Anthropic (Opus, Sonnet ו-Haiku), Anthropic החלה להגביל את קצב השימוש עבור מוצרים מחוץ למערכת האקולוגית שלה.\n\nזה כבר מורגש בפלטפורמות כגון GitHub Copilot, שבה גרסאות ה-Opus האחרונות אינן זמינות עוד, וכן בתוכניות הבסיס של OpenClaw."
-    },
-    category: { en: "AI Models", he: "מודלי AI" },
-    date: "May 11, 2026",
-    source: "Anthropic"
-  },
-  {
-    title: { en: "GPT Images 2.0", he: "GPT Images 2.0" },
-    description: {
-      en: "OpenAI recently released GPT Images 2.0, its latest image generation and editing model focused on high-quality visuals, strong prompt understanding, realistic rendering, and accurate text generation within images.\n\nThe capability is built directly into ChatGPT and fully integrated into the platform.",
-      he: "OpenAI שחררה לאחרונה את GPT Images 2.0, מודל יצירת ועריכת התמונות האחרון שלה, המתמקד בויזואלים איכותיים, הבנת פרומפטים חזקה, רינדור ריאליסטי ויצירת טקסט מדויקת בתוך תמונות.\n\nהיכולת בנויה ישירות לתוך ChatGPT ומשולבת במלואה בפלטפורמה."
-    },
-    category: { en: "AI Models", he: "מודלי AI" },
-    date: "May 11, 2026",
+    date: "May 17, 2026",
     source: "OpenAI"
   },
   {
-    title: { en: "Codex Is the New Claude Cowork", he: "Codex הוא Claude Cowork החדש" },
+    title: { en: "Android AI", he: "Android AI" },
     description: {
-      en: "Codex, OpenAI's AI software engineering platform capable of running code (similar to Claude Code, Cursor, and others), is evolving into a \"super app.\"\n\nIt can now also perform actions directly on your computer - similar to Claude Cowork and OpenClaw - while operating anonymously.",
-      he: "Codex, פלטפורמת הנדסת התוכנה של OpenAI המסוגלת להריץ קוד (דומה ל-Claude Code, Cursor ואחרים), מתפתחת ל\"סופר-אפ\".\n\nכעת הוא יכול גם לבצע פעולות ישירות על המחשב שלך - דומה ל-Claude Cowork ו-OpenClaw - תוך פעולה בעילום שם."
+      en: "Gemini Intelligence is coming to Android this summer, bringing a wide range of AI-powered features. These include \"Rambler,\" an advanced voice-to-text capability, AI-generated custom widgets, Gemini integration within Chrome on mobile, and cross-app actions that can intelligently work across your connected accounts and applications.",
+      he: "Gemini Intelligence מגיעה לאנדרואיד הקיץ הזה, ומביאה מגוון רחב של פיצ'רים מבוססי AI. אלה כוללים את \"Rambler\" יכולת מתקדמת להמרת קול לטקסט, ווידג'טים מותאמים אישית שנוצרים על ידי AI, שילוב Gemini בתוך Chrome במובייל, ופעולות חוצות-אפליקציות שיכולות לעבוד בצורה חכמה על פני החשבונות והאפליקציות המחוברות שלך."
     },
     category: { en: "AI Tools", he: "כלי AI" },
-    date: "May 11, 2026",
+    date: "May 17, 2026",
+    source: "Google"
+  },
+  {
+    title: { en: "OpenAI Agents Workspace", he: "OpenAI Agents Workspace" },
+    description: {
+      en: "Want to create and share AI Agents without writing code, while still benefiting from Skills, MCPs, and advanced integrations? Several platforms already support this approach, and now OpenAI is joining the list with its own Agents Workspace capabilities.",
+      he: "רוצים ליצור ולשתף סוכני AI מבלי לכתוב קוד, תוך שמירה על היתרונות של Skills, MCPs ואינטגרציות מתקדמות? מספר פלטפורמות כבר תומכות בגישה זו, ועכשיו OpenAI מצטרפת לרשימה עם יכולות Agents Workspace משלה."
+    },
+    category: { en: "AI Tools", he: "כלי AI" },
+    date: "May 17, 2026",
     source: "OpenAI"
+  },
+  {
+    title: { en: "Anthropic & SpaceX Team Up", he: "Anthropic ו-SpaceX מתאחדות" },
+    description: {
+      en: "A few weeks ago, we mentioned that Anthropic appeared compute-constrained, which partly explained its cautious model usage policies. That has now changed: Anthropic and SpaceX have announced a partnership that significantly expands Anthropic's available compute capacity.",
+      he: "לפני מספר שבועות ציינו שנראה שאנתרופיק הייתה מוגבלת בכוח המחשוב, מה שהסביר בחלקו את מדיניות השימוש המאופקת שלה במודלים. זה השתנה כעת: Anthropic ו-SpaceX הכריזו על שותפות המרחיבה משמעותית את קיבולת המחשוב הזמינה של Anthropic."
+    },
+    category: { en: "AI Tools", he: "כלי AI" },
+    date: "May 17, 2026",
+    source: "Anthropic"
   }
 ];
